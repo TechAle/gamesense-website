@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+            background-color: #1b1b1b;
+            margin: 0;
+            padding: 0;
+        }
+        @font-face {
+
+            font-family: "Arkanoid Solid";
+            src: url('../font/Arka_solid.ttf') format("truetype");
+
+        }
+        .gs {
+            stroke-width: 4px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            /*noinspection CssNoGenericFontName*/
+            font-family : "Arkanoid Solid";
+            fill : transparent;
+            stroke-dasharray:100%;
+            stroke-dashoffset:0;
+            animation-name: outline;
+            animation-duration: 2.5s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        #fill {
+            animation-name: fill;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+
+
+        @keyframes outline{
+            from{
+                stroke-dashoffset:100%;
+            }
+
+            to{
+                stroke-dashoffset:0;
+            }
+        }
+
+        @keyframes fill{
+            from{
+                stroke-width: 2px;
+            }
+
+            to{
+                stroke-width: 10px;
+            }
+        }
+        #gs {
+            width: 100%;
+            height: 18vw;
+        }
+
+        #small {
+            font-size: 15vw;
+        }
+        #large {
+            font-size: 10vw;
+        }
+
+        #small { display: none; }
+
+
+        @media (max-width: 1200px) {
+            #small { display: inline-block; }
+            #large { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<svg style="height: 0; width: 0">
+    <defs>
+        <linearGradient id="gradient" x1="0" x2="1">
+            <stop stop-color="#2ffd33" offset="0"/>
+            <stop stop-color="white" offset="1"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+<svg id="gs">
+    <symbol id="text-copy">
+        <text text-anchor="middle" x="50%"  y="80%" class="text--line gs" id="large" >
+            GameSense
+        </text>
+        <text text-anchor="middle" x="50%"  y="80%" class="text--line gs" id="small" >
+            gs
+        </text>
+    </symbol>
+    <g class="g-ants">
+        <use xlink:href="#text-copy"
+             class="text-copy" id="outline" stroke="url(#gradient)"></use>
+        <use xlink:href="#text-copy"
+             class="text-copy" id="fill"></use>
+    </g>
+</svg>
+
+
+</body>
+</html>
