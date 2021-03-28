@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- MetaData -->
+
+
+    <!-- Better mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>postman</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- BootStrap things again -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            scroll-behavior: smooth;
+            height: 100vh;
+        }
+        #top {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+            height: 20%;
+        }
+
+        #logoSmall {
+            height: 50px;
+            width: 80px;
+        }
+
+        #nav {
+            background-color: #141414 !important;
+            border-bottom: solid #40934d 5px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        @media (max-width: 988px) {
+            #navbarResponsive {
+                border-top: 1px #40934d solid;
+                margin-top: 8px;
+            }
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+        }
+
+        #content {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+
+        }
+        #padding-header {
+            height: 81px;
+        }
+
+        #mainContent {
+            background-color: transparent;
+            flex-grow: 1;
+            z-index: 1;
+        }
+
+        @font-face {
+
+            font-family: "Arkanoid Solid";
+            src: url('./font/Arka_solid.ttf') format("truetype");
+
+        }
+        .gs {
+            stroke-width: 4px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            /*noinspection CssNoGenericFontName*/
+            font-family : "Arkanoid Solid";
+            fill : transparent;
+            stroke-dasharray:100%;
+            stroke-dashoffset:0;
+            animation-name: outline;
+            animation-duration: 3.5s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        .gsDesc {
+            stroke-width: 4px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            /*noinspection CssNoGenericFontName*/
+            font-family : Arial;
+            fill : transparent;
+            stroke-dasharray:100%;
+            stroke-dashoffset:0;
+            animation-name: outline;
+            animation-duration: 3.5s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+        }
+
+
+        #gs {
+            width: 100%;
+            height: 25vw;
+        }
+
+
+        .small {
+            font-size: 13vw;
+        }
+        .large {
+            font-size: 10vw;
+        }
+
+        .small { display: none; }
+
+
+
+        @media (max-width: 988px) {
+            .small { display: inline-block; }
+            .large { display: none; }
+            #myVideo {
+                left: -350px
+            }
+        }
+
+        @keyframes fill{
+            from{
+                fill-opacity: 0;
+            }
+
+            to{
+                fill-opacity: 1;
+            }
+        }
+
+        @keyframes outline{
+            from{
+                stroke-dashoffset:100%;
+            }
+
+            to{
+                stroke-dashoffset:0;
+            }
+        }
+
+        #largeDesc {
+            stroke-width: 2px;
+            font-size: 7vw;
+        }
+        #smallDesc {
+            stroke-width: 1px;
+            font-size: 7vw;
+        }
+
+    </style>
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="./background/back.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-absolute " id="nav">
+
+    <div class="container" id="top">
+        <a class="navbar-brand" id="logo" href="#">
+            <img src="./logo/logo_small.png" alt="GameSense logo" id="logoSmall">        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ShowCase</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Developers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Configs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="content">
+    <div id="padding-header">
+    </div>
+    <div id="mainContent">
+
+        <svg style="height: 0; width: 0">
+            <defs>
+                <linearGradient id="gradient" x1="0" x2="1">
+                    <stop stop-color="#2ffd33" offset="0"/>
+                    <stop stop-color="white" offset="1"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+
+        <svg id="gs">
+            <symbol id="GsTitle">
+                <text text-anchor="middle" x="50%"  y="50%" class="text--line gs large" >
+                    GameSense
+                </text>
+                <text text-anchor="middle" x="50%"  y="50%" class="text--line gs small" >
+                    gs
+                </text>
+                <text text-anchor="middle" x="50%"  y="80%" class="text--line gsDesc large" id="largeDesc">
+                    Minecraft Utility Client
+                </text>
+                <text text-anchor="middle" x="50%"  y="80%" class="text--line gsDesc small" id="smallDesc">
+                    Utility Client
+                </text>
+            </symbol>
+
+            <g class="g-ants">
+                <use xlink:href="#GsTitle"
+                     class="text-copy" id="outLineGs" stroke="url(#gradient)"></use>
+            </g>
+
+
+        </svg>
+
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
