@@ -7,7 +7,7 @@
     <!-- Better mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>postman</title>
+    <title>GameSense</title>
     <!-- BootStrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,12 +15,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
+        /* Html Body normal css */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
             scroll-behavior: smooth;
             height: 100vh;
         }
+
+        /* Nav Things */
         #top {
             margin-left: 0 !important;
             margin-right: 0 !important;
@@ -29,11 +32,13 @@
             height: 20%;
         }
 
+        /* Logo sizes */
         #logoSmall {
             height: 50px;
             width: 80px;
         }
 
+        /* Inside nav */
         #nav {
             background-color: #141414 !important;
             border-bottom: solid #40934d 5px;
@@ -41,6 +46,7 @@
             z-index: 2;
         }
 
+        /* Add line when we press the button in small screen */
         @media (max-width: 988px) {
             #navbarResponsive {
                 border-top: 1px #40934d solid;
@@ -48,6 +54,7 @@
             }
         }
 
+        /* Video css */
         #myVideo {
             position: fixed;
             right: 0;
@@ -57,28 +64,37 @@
             z-index: 0;
         }
 
+        /* Main Content, we use display: Flex and flex-flow: column for making the actual content
+           full size
+         */
         #content {
             height: 100%;
             display: flex;
             flex-flow: column;
 
         }
+
+        /* Padding for the nav */
         #padding-header {
             height: 81px;
         }
 
+        /* Main Content CSS */
         #mainContent {
             background-color: transparent;
             flex-grow: 1;
             z-index: 1;
         }
 
+        /* GameSense Font */
         @font-face {
 
             font-family: "Arkanoid Solid";
             src: url('./font/Arka_solid.ttf') format("truetype");
 
         }
+
+        /* Title Text */
         .gs {
             stroke-width: 4px;
             letter-spacing: 3px;
@@ -94,6 +110,7 @@
             animation-fill-mode: forwards;
         }
 
+        /* Title Description */
         .gsDesc {
             stroke-width: 4px;
             letter-spacing: 3px;
@@ -109,24 +126,33 @@
             animation-fill-mode: forwards;
         }
 
-
+        /* Container of the title/description */
         #gs {
             width: 100%;
             height: 25vw;
         }
 
-
+        /* Dimensions */
         .small {
             font-size: 13vw;
         }
         .large {
             font-size: 10vw;
         }
+        #largeDesc {
+            stroke-width: 2px;
+            font-size: 7vw;
+        }
+        #smallDesc {
+            stroke-width: 1px;
+            font-size: 7vw;
+        }
 
+
+        /* We hide the small one at beginning */
         .small { display: none; }
 
-
-
+        /* But, if max-width, lets hide the other */
         @media (max-width: 988px) {
             .small { display: inline-block; }
             .large { display: none; }
@@ -135,16 +161,7 @@
             }
         }
 
-        @keyframes fill{
-            from{
-                fill-opacity: 0;
-            }
-
-            to{
-                fill-opacity: 1;
-            }
-        }
-
+        /* Animation OutLine */
         @keyframes outline{
             from{
                 stroke-dashoffset:100%;
@@ -155,18 +172,55 @@
             }
         }
 
-        #largeDesc {
-            stroke-width: 2px;
-            font-size: 7vw;
+        /* Buttons Css */
+        .btn-outline {
+            color: white;
+            background-color: transparent;
+            border-color: #40934d;
+            font-weight: bold;
+            letter-spacing: 0.05em;
         }
-        #smallDesc {
-            stroke-width: 1px;
-            font-size: 7vw;
+
+        .btn-outline {
+            color: white;
+            background-color: transparent;
+            border-color: #40934d;
+            font-weight: bold;
+            border-radius: 3px;
+            border-width: 2px;
+            transition: color .4s linear;
+        }
+
+        .btn-outline:hover,
+        .btn-outline:active,
+        .btn-outline:focus {
+            color: #2ffd33;
+        }
+        #buttonDiv {
+            text-align: center;
+            margin-left: 1vw !important;
+            width: 98vw !important;
+            max-width: 98vw !important;
+        }
+        .btn {
+            width: 100%;
+            max-width: 300px;
+            height: 50px;
+            margin-top: 15px !important;
+            padding-top: 10px !important;
+        }
+
+        /* Add the padding when med col */
+        @media (min-width: 768px) and (max-width: 992px) {
+            #pad {
+                display: inline-block !important;
+            }
         }
 
     </style>
 </head>
 <body>
+<!-- The video in background -->
 <video autoplay muted loop id="myVideo">
     <source src="./background/back.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
@@ -210,28 +264,32 @@
 </nav>
 
 <div id="content">
+    <!-- Since we have an header that is absolute, we have to simulate his height, and we'll do this is a padding  -->
     <div id="padding-header">
     </div>
+    <!-- Main Content -->
     <div id="mainContent">
 
-        <svg style="height: 0; width: 0">
+
+        <!-- Animated Text -->
+        <svg id="gs">
+            <!-- Gradient text in svg -->
             <defs>
                 <linearGradient id="gradient" x1="0" x2="1">
                     <stop stop-color="#2ffd33" offset="0"/>
                     <stop stop-color="white" offset="1"/>
                 </linearGradient>
             </defs>
-        </svg>
-
-
-        <svg id="gs">
+            <!-- Text Title -->
             <symbol id="GsTitle">
+                <!-- Big Text / Symbol, one is for big screen, the other is for small -->
                 <text text-anchor="middle" x="50%"  y="50%" class="text--line gs large" >
                     GameSense
                 </text>
                 <text text-anchor="middle" x="50%"  y="50%" class="text--line gs small" >
                     gs
                 </text>
+                <!-- Description, one is for big screen, the other is for small -->
                 <text text-anchor="middle" x="50%"  y="80%" class="text--line gsDesc large" id="largeDesc">
                     Minecraft Utility Client
                 </text>
@@ -240,14 +298,54 @@
                 </text>
             </symbol>
 
+            <!-- Display the text -->
             <g class="g-ants">
+                <!-- The actual text, the target is the symbol above, and we add "stroke=" for adding
+                     The custom stroke, we cannot add it on the css
+                 -->
                 <use xlink:href="#GsTitle"
                      class="text-copy" id="outLineGs" stroke="url(#gradient)"></use>
             </g>
 
 
         </svg>
+        <!-- End Animated Text -->
 
+        <!-- Button Div List -->
+        <div id="buttonDiv" class="container">
+            <div class="row">
+                <!--
+                    The col is like this:
+                    Large, every buttons in the same line
+                    Medium, 4 buttons every lines
+                    Small, 2 buttons every lines
+                    Really small, 1 every lines
+                    And in the medium one, we add a padding between 2 buttons at the bottom
+                 -->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">ShowCase</a>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">Developers</a>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">FAQ</a>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">Configs</a>
+                </div>
+
+                <!-- Padding -->
+                <div class="col-md-6" style="display: none" id="pad"></div>
+
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <a href="#" class="btn btn-outline">Contacts</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
