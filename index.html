@@ -14,46 +14,9 @@
     <!-- BootStrap things again -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Page Css -->
+    <link rel="stylesheet" href="./css/main.css" >
     <style>
-        /* Html Body normal css */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            scroll-behavior: smooth;
-            height: 100vh;
-        }
-
-        /* Nav Things */
-        #top {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            width: 100%;
-            max-width: 100%;
-            height: 20%;
-        }
-
-        /* Logo sizes */
-        #logoSmall {
-            height: 50px;
-            width: 80px;
-        }
-
-        /* Inside nav */
-        #nav {
-            background-color: #141414 !important;
-            border-bottom: solid #40934d 5px;
-            width: 100%;
-            z-index: 2;
-        }
-
-        /* Add line when we press the button in small screen */
-        @media (max-width: 988px) {
-            #navbarResponsive {
-                border-top: 1px #40934d solid;
-                margin-top: 8px;
-            }
-        }
-
         /* Video css */
         #myVideo {
             position: fixed;
@@ -62,28 +25,6 @@
             min-width: 100%;
             min-height: 100%;
             z-index: 0;
-        }
-
-        /* Main Content, we use display: Flex and flex-flow: column for making the actual content
-           full size
-         */
-        #content {
-            height: 100%;
-            display: flex;
-            flex-flow: column;
-
-        }
-
-        /* Padding for the nav */
-        #padding-header {
-            height: 81px;
-        }
-
-        /* Main Content CSS */
-        #mainContent {
-            background-color: transparent;
-            flex-grow: 1;
-            z-index: 1;
         }
 
         /* GameSense Font */
@@ -242,7 +183,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ShowCase</a>
+                    <a class="nav-link" href="showcase.html">ShowCase</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Download</a>
