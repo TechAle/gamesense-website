@@ -1,71 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Download</title>
+    <!-- MetaData -->
+    <!-- Better mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-/* sidebar menu */
-.aligncenter {
-        display: block;
-        width: 100%
-}
-.sidenav {
-  height: 96%; 
-  width: 125px; 
-  position: fixed; 
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #141414; 
-  overflow-x: hidden; 
-  padding-top: 20px;
-  border: 5px outset rgb(0, 255, 0);
-}
-
-/* nav menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  font-size: 20px;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #fffefe;
-}
-
-
-.main {
-  margin-left: 125px; 
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-    
+    <title>Download</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- BootStrap things again -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Page Css -->
+    <link rel="stylesheet" href="./css/main.css" >
+    <style>
+        html, body {
+            background-image: url("./background/back.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-<div class="sidenav">
-  <a href="index.html">
-         <img alt="Logo" src="./logo/logo_small.png" class="aligncenter">
-  </a>
-  <a href="index.html">Home</a>
-  <a href="showcase.html">Showcase</a>
-  <a href="download.html">Download</a>
-  <a href="contact.html">Contacts</a>
-  <a href="developers.html">Developers</a>
-  <a href="faq.html">FAQ</a>
-  <a href="configs.html">Configs</a>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-absolute " id="nav">
+
+    <div class="container" id="top">
+        <a class="navbar-brand" id="logo" href="index.html">
+            <img src="./logo/logo_small.png" alt="GameSense logo" id="logoSmall">        </a>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="showcase.html">Showcase</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="download.html">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="developers.html">Developers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="configs.html">Configs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="content">
+    <!-- Since we have an header that is absolute, we have to simulate his height, and we'll do this is a padding  -->
+    <div id="padding-header">
+    </div>
+    <!-- Main Content -->
+    <div id="mainContent">
+        <div style="text-align: center">
+            <font color="green">
+            <h1>Download & Installation</h1>
+            <p>1) GameSense requires Minecraft Forge to run! If you don't have Forge installed, you need to download the installer <a href="https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.12.2.html">Here.</a></p>
+
+                <p>2) Download the GameSense jar from the releases channel in our <a href="https://discord.gg/GJaZ6tucwf">Discord</a> or <a href="https://github.com/IUDevman/gamesense-client">Github.</a> Drag this jar into your mods folder located in %appdata%/.minecraft/mods/1.12.2. If these folders do not exist, make them.</p>
+
+                <p>3) Run Minecraft using your forge profile and GameSense will load in with it. You can check that it is loaded by clicking on the "Mods" button in the home screen.</p>
+                <h2>Basic Information</h2>
+                <p>Bind for ClickGui- "O"</p>
+                <p>Default command prefix- "-"</p>
+                <p>You can change the command prefix by typing the command "-prefix (new prefix)".</p>
+                <p>The ClickGui bind can be changed either by typing the command "-bind clickgui (new bind)" or by right clicking on the ClickGui Module and setting a new bind by clicking on the setting button.</p>
+
+        </font>
+        </div>
+    </div>
 </div>
-<div class="main">
-    <h1>How To Download</h1>
-    <p>Placeholder</p>
-    <ui>
-        <li>Placeholder</li>
-        <li>Placeholder </li>
-    </ui>
-</div>
+
+
+
+
 </body>
 </html>
